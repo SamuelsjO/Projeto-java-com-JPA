@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FormularioMedico" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="01f1e3d6-a373-4606-88c1-465c740f8c0a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString language="SQL">
+		<![CDATA[select 
+PAC.nomepaciente, planosaude, datanascimento,cpf,nomemae,
+AGE.algumdisturbio, diabete, hiparterial,oncologo,stress
+from  paciente as PAC
+inner join agenda as AGE
+on(PAC.idpaciente = AGE.idAgenda)]]>
+	</queryString>
+	<field name="nomepaciente" class="java.lang.String"/>
+	<field name="planosaude" class="java.lang.String"/>
+	<field name="datanascimento" class="java.lang.String"/>
+	<field name="cpf" class="java.lang.String"/>
+	<field name="nomemae" class="java.lang.String"/>
+	<field name="algumdisturbio" class="java.lang.String"/>
+	<field name="diabete" class="java.lang.String"/>
+	<field name="hiparterial" class="java.lang.String"/>
+	<field name="oncologo" class="java.lang.String"/>
+	<field name="stress" class="java.lang.String"/>
+	<group name="nomepaciente">
+		<groupExpression><![CDATA[$F{nomepaciente}]]></groupExpression>
+	</group>
+	<group name="nomemae">
+		<groupExpression><![CDATA[$F{nomemae}]]></groupExpression>
+	</group>
+	<group name="datanascimento">
+		<groupExpression><![CDATA[$F{datanascimento}]]></groupExpression>
+	</group>
+	<group name="planosaude">
+		<groupExpression><![CDATA[$F{planosaude}]]></groupExpression>
+	</group>
+	<group name="cpf">
+		<groupExpression><![CDATA[$F{cpf}]]></groupExpression>
+	</group>
+	<group name="algumdisturbio">
+		<groupExpression><![CDATA[$F{algumdisturbio}]]></groupExpression>
+	</group>
+	<group name="diabete">
+		<groupExpression><![CDATA[$F{diabete}]]></groupExpression>
+	</group>
+	<group name="hiparterial">
+		<groupExpression><![CDATA[$F{hiparterial}]]></groupExpression>
+	</group>
+	<group name="oncologo">
+		<groupExpression><![CDATA[$F{oncologo}]]></groupExpression>
+	</group>
+	<group name="stress">
+		<groupExpression><![CDATA[$F{stress}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="250" height="30" uuid="04d81b6f-1c8d-4659-a466-ccff1cb64f59"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Formulario Paciente]]></text>
+			</staticText>
+			<textField pattern="HH:mm">
+				<reportElement x="456" y="22" width="94" height="15" uuid="960d3744-3d3e-4c23-9c14-9ea45f148ae9"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="355" y="22" width="100" height="15" uuid="3aa2c1c4-4c09-420c-9f2c-52b382d08a79"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="150" y="50" width="230" height="30" uuid="3d6b2746-7947-4252-93ae-5426406dd125"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clinica Santa Maria]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="153" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="30" uuid="279a789f-e5c3-493e-b29e-2691483fce14"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome Paciente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="0" width="200" height="30" uuid="16937f96-8c0f-4456-96ce-4d6f1b184305"/>
+				<textFieldExpression><![CDATA[$F{nomepaciente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="30" width="100" height="30" uuid="7078352d-7c02-4ded-a39e-31a4bed3c9b1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DataNascimento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="35" width="130" height="20" uuid="44692bd2-8e7f-4a05-b60d-4cbebb30f2ba"/>
+				<textFieldExpression><![CDATA[$F{datanascimento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="-2" width="60" height="30" uuid="7d3d1038-30ff-4491-9d6a-0e509a8e4faf"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome Mae:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="-2" width="210" height="30" uuid="05be1797-5b8e-440c-bc58-c09853fbd6c5"/>
+				<textFieldExpression><![CDATA[$F{nomemae}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="40" height="30" uuid="8a8f5e9e-07df-40f3-95d9-f35def30d6e1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="35" width="100" height="20" uuid="e2dfdead-465e-4d68-a96e-f30d50f41b2e"/>
+				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="30" width="60" height="30" uuid="921b627a-3148-4135-b50b-b6fc6b1b41ee"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Convenio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="35" width="120" height="20" uuid="685d9c94-3a07-4934-bc36-fc2013217ea3"/>
+				<textFieldExpression><![CDATA[$F{planosaude}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="100" width="90" height="30" uuid="3528840e-2a12-45f8-8f2a-d5244d5efa6a"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Formulario]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="30" uuid="76e310ff-dcc5-4bc8-9e69-633eba38776f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Diabetes:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="0" width="60" height="30" uuid="dc20a8fb-f051-4987-979a-b5d6bbcb8641"/>
+				<textFieldExpression><![CDATA[$F{diabete}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="80" height="30" uuid="a02be423-35c3-4084-9180-50f2bf1c50c6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Disturbio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="40" width="60" height="30" uuid="11623b3b-a948-459a-bc0b-a1280a65ab10"/>
+				<textFieldExpression><![CDATA[$F{algumdisturbio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="80" height="30" uuid="8d1e04dd-867f-49c2-828e-cdaec7915349"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hipertensao:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="10" width="60" height="30" uuid="d8550054-0cbd-455b-b264-3640d75a2984"/>
+				<textFieldExpression><![CDATA[$F{hiparterial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="50" width="80" height="30" uuid="b62315b6-c228-4c37-b679-6af48fd5760a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Oncologo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="50" width="60" height="30" uuid="d92019eb-4e94-44f6-af90-66a1e48b9a05"/>
+				<textFieldExpression><![CDATA[$F{oncologo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="90" width="80" height="30" uuid="4bb1df94-2f7a-4975-b899-1ef4b94fc517"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stress:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="90" width="60" height="30" uuid="36a88a6e-365c-405e-93e4-3d263329e17b"/>
+				<textFieldExpression><![CDATA[$F{stress}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="40" width="100" height="16" uuid="1fdfec30-8c50-4fd2-8f9a-eb45993ed878"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="63" splitType="Stretch"/>
+	</summary>
+</jasperReport>
